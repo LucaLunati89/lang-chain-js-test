@@ -10,4 +10,4 @@ const invokeChatOpenAI = async (llm: LLM): Promise<AIMessage> => {
 
 invokeChatOpenAI(llm)
   .then((result) => console.log("result: ", result))
-  .catch((error) => console.log(error));
+  .catch((error) => console.log("error: ", error));
