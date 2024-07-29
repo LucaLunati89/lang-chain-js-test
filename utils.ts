@@ -11,7 +11,7 @@ export type LLM = {
 };
 
 export const llm: LLM = {
-  model: "gpt-4",
+  model: "gpt-4o-mini",
   temperature: 0,
 };
 
