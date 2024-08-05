@@ -1,9 +1,10 @@
 import { config } from "dotenv";
 import { HumanMessage, AIMessage } from "@langchain/core/messages";
+import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
 
 config();
 
-export const openApiKey = process.env.OPENAI_API_KEY;
+export const openAIApiKey = process.env.OPENAI_API_KEY;
 
 export type LLM = {
   model: string;
@@ -29,3 +30,9 @@ export const messages = [
   new HumanMessage({ content: "That's great!" }),
   new AIMessage({ content: "yes it is!" }),
 ];
+
+export const sessionId = "sessionId";
+
+export const messageHistories: Record<string, InMemoryChatMessageHistory> = {
+  [sessionId]: new InMemoryChatMessageHistory(messages),
+};
